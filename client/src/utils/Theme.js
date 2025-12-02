@@ -10,6 +10,7 @@ export const darkTheme = {
   menu_secondary_text: "#dadde0",
   text_primary: "#F2F3F4",
   text_secondary: "#dadde0",
+  imageFilter: "none",
   card: "#1C1E27",
   card_light: "#191924",
   disabled: "#dadde0",
@@ -23,11 +24,9 @@ export const darkTheme = {
 };
 
 
-
-
 export const lightTheme = {
-  bg: "#f9f9f9",
-  bgLight: "#FFFFFF",
+  bg: "#e6e6e6e1",
+  bgLight: "#ffffffda",
   primary: "#007AFF",
   secondary: "#9747FF",
   disabled: "#b1b2b3",
@@ -36,8 +35,9 @@ export const lightTheme = {
   menu_primary_text: "#F2F3F4",
   menu_secondary_text: "#b1b2b3",
   table_header: "#242445",
-  text_primary: "#404040",
+  text_primary: "#191919ff",
   text_secondary: "#4d4c4c",
+  imageFilter: "brightness(0.95) contrast(0.95)",
   card: "#FFFFFF",
   black: "#000000",
   white: "#FFFFFF",

@@ -12,6 +12,7 @@ const Card = styled.div`
   display: flex;
   border-radius: 15px;
   box-shadow: 1px 2px 40px 8px ${({ theme }) => theme.black + 60};
+  filter: ${({ theme }) => theme.imageFilter};
   cursor: pointer;
   transition: all 0.3s ease;
   height: 100%;

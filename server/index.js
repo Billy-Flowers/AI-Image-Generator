@@ -12,7 +12,6 @@ app.use(cors());
 app.use(express.json({limit: "50mb"}));
 app.use(express.urlencoded({limit: "50mb", extended: true}));
 
-//err handling
 app.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.message || "Something went wrong";
@@ -26,14 +25,12 @@ app.use((err, req, res, next) => {
 app.use("/api/posts", PostRoutes);
 app.use("/api/generateImage/", generateImageRoute);
 
-//Default get
 app.get("/", async (req, res) => {
   res.status(200).send({
     message: "Hello from AI Image Generator",
   });
 });
 
-//function to connect to the database
 const connectDB = async () => {
   try {
     mongoose.set("strictQuery", true);
@@ -44,7 +41,6 @@ const connectDB = async () => {
   }
 };
 
-//function to start the server
 const startServer = async () => {
   try {
     connectDB();
@@ -53,7 +49,5 @@ const startServer = async () => {
     console.log(error);
   }
 };  
-
-
 
 startServer();

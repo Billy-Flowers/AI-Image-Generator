@@ -2,9 +2,8 @@ import { useState, useEffect, React } from "react";
 import styled from "styled-components";
 import SearchBar from "../components/SearchBar";
 import ImageCard from "../components/ImageCard";
+import FunLoader from "../components/FunLoader";
 import { GetPosts } from "../api";
-import { CircularProgress } from "@mui/material";
-
 
 const Container = styled.div`
   min-height: 100vh;
@@ -71,16 +70,6 @@ const NoPostsMessage = styled.div`
   color: ${({ theme }) => theme.text_secondary};
   opacity: 0.7;
 `
-const LoadingMessage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  font-size: 18px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.text_primary};
-`;
-
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -137,13 +126,7 @@ const Home = () => {
       <Wrapper>
         {error && <div style={{ color: "red" }}>{error}</div>}
         {loading ? (
-          <LoadingMessage>
-            <CircularProgress />
-            Loading images...
-            <div style={{ fontSize: "14px", opacity: "0.7" }}>
-              Please wait, this may take a moment
-            </div>
-          </LoadingMessage>
+          <FunLoader />
         ) :  
           filteredPost.length > 0 ? (
             <CardWrapper>
@@ -158,11 +141,9 @@ const Home = () => {
             <NoPostsMessage>No posts found</NoPostsMessage>
           )
         }
-
       </Wrapper>
     </Container>
   );
 };
-
 
 export default Home

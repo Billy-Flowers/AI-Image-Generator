@@ -1,6 +1,7 @@
 import axios from "axios";
 
 // http://localhost:8080/api/
+// https://ai-image-builder.onrender.com/api/
 const API = axios.create({
   baseURL: "https://ai-image-builder.onrender.com/api/",
 });
