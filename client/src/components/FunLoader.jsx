@@ -1,18 +1,6 @@
 import React, { useState, useEffect, useRef} from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { CircularProgress } from '@mui/material';
-
-const bounce = keyframes`
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
-`;
-
-const pulse = keyframes`
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-`;
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -27,7 +15,6 @@ const AnimatedText = styled.div`
   font-size: 24px;
   font-weight: 600;
   color: ${({ theme }) => theme.secondary};
-  animation: ${pulse} 2s ease-in-out infinite;
 `;
 
 const TipCard = styled.div`
@@ -36,7 +23,6 @@ const TipCard = styled.div`
   padding: 20px;
   max-width: 400px;
   box-shadow: 0 4px 12px ${({ theme }) => theme.shadow};
-  animation: ${bounce} 3s ease-in-out infinite;
 `;
 
 const TipTitle = styled.h3`

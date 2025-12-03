@@ -7,6 +7,7 @@ import CreatePost from "./pages/CreatePost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import ChristmasOverlay from "./components/ChristmasOverlay";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -45,6 +46,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </Wrapper>
+        <ChristmasOverlay />
       </Container>
     </ThemeProvider>
   );
